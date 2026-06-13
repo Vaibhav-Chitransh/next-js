@@ -1,5 +1,10 @@
 import React from 'react'
 
+// static metadata
+export const metadata = {
+  title: 'Blogs'
+}
+
 const Blog = () => {
   return (
     <div>

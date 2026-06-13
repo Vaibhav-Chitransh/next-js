@@ -1,5 +1,12 @@
 import React from 'react'
 
+// setting absolute metadata
+export const metadata = {
+  title: {
+    absolute: 'My Files'
+  }
+}
+
 const FilePath = async ({params}) => {
     const {filePath} = await params;
   return (

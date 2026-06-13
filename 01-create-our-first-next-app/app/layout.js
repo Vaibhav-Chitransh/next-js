@@ -1,3 +1,13 @@
+// default metadata
+export const metadata = {
+  // title: 'Test app'
+  title: {
+    default: 'Test app',
+    template: '%s | Test app'
+  },
+  description: 'My first next-js app'
+}
+
 export default function RootLayout({ children }) {
   return (
     <html
