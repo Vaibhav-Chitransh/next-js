@@ -7,7 +7,10 @@ let cached = global.mongoose;
 if(!cached) cached = global.mongoose = {conn: null, promise: null};
 
 const connectDB = async () => {
-    if(cached.conn) return cached.conn;
+    if(cached.conn) {
+        console.log("DB connected from cache");
+        return cached.conn;
+    }
 
     if(!cached.promise) {
         cached.promise = connect(mongoURI).then((c) => c.connection);
@@ -15,6 +18,7 @@ const connectDB = async () => {
 
     try {
         cached.conn = await cached.promise;
+        console.log("DB connected for first time");
     } catch (error) {
         throw error;
     }
